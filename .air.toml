@@ -1,4 +1,4 @@
-root = "."
+root = "/app"
 tmp_dir = "tmp"
 
 [build]
@@ -7,10 +7,16 @@ tmp_dir = "tmp"
   full_bin = "tmp/main"
   include_ext = ["go"]
   exclude_dir = ["tmp", "vendor"]
+  delay = 1000
+
+[watcher]
+  poll = true
+  interval = 500
 
 [log]
   color = true
   time = true
+  level = "debug"
 
 [screen]
   clear_on_rebuild = true
