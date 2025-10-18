@@ -1,0 +1,13 @@
+services:
+  gateway:
+    container_name: go-gateway-dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+      - /app/tmp # ignore compiled binary cache
+    environment:
+      - GO_ENV=development
