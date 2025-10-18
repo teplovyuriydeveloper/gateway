@@ -11,3 +11,9 @@ services:
       - /app/tmp # ignore compiled binary cache
     environment:
       - GO_ENV=development
+    networks:
+      - dev-net
+
+networks:
+  dev-net:
+    driver: bridge
