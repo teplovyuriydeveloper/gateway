@@ -10,8 +10,7 @@ import (
 func main() {
 	r := gin.Default()
 
-	r.Any("/users/*path", handlers.Proxy("http://localhost:8081"))
-	r.Any("/orders/*path", handlers.Proxy("http://localhost:8082"))
+	r.Any("/article/*path", handlers.Proxy("http://localhost:8081"))
 
 	r.NoRoute(func(c *gin.Context) {
 		c.JSON(http.StatusNotFound, gin.H{"error": "not found"})
